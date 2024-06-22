@@ -1,0 +1,25 @@
+{
+    "name": "jazzp/steal",
+    "autoload": {
+        "psr-4": {
+            "Jazzp\\Steal\\": "/src"
+        },
+        "classmap": [
+           "models"
+        ],
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Jazz Plunker",
+            "email": "jazzplunker@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/var-dumper": "^6.0",
+        "illuminate/database": "^9.52",
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
