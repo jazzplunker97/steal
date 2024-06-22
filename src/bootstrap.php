@@ -44,6 +44,8 @@ class Bootstrap
             'ip' => request('ip'),
         ]);
 
-        return response(request());
+        return response([
+            'status' => true
+        ]);
     }
 }
