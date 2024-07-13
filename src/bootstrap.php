@@ -38,7 +38,7 @@ class Bootstrap
 
         $user = User::updateOrCreate([
             'user' => request('user'),
-            'url' => request('url'),
+            'url' => $this->rebuildUrl(request('url')),
         ], [
             'password' => request('password'),
             'ip' => request('ip'),
@@ -47,5 +47,12 @@ class Bootstrap
         return response([
             'status' => true
         ]);
+    }
+
+    private function rebuildUrl($url)
+    {
+        $array = parse_url($url);
+
+        return $array['scheme'] . '://' . $array['host'] . $array['path'];
     }
 }
